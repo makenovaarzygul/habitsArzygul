@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h1>Главная страница</h1>
+    {% if habits %}
+         {% for el in habits %}
+        <div class="alert alert-warning mt-2">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.habit }}</p>
+        </div>
+         {% endfor %}
+    {% else %}
+     <p>У вас нет добавленных привычек</p>
+    {% endif %}
+{% endblock %}
+
